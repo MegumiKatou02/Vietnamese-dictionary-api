@@ -19,3 +19,23 @@
   "valid": true,
 }
 ```
+### 🔗 Related words (Gợi ý từ liên quan)
+- **Method:** `GET`
+- **Endpoint:** <br>
+```url
+/api/search?word={word}&suggestion=true
+```
+- **Response**
+```url
+{
+  "text": "bệnh",
+  "valid": true,
+  "suggestions": [
+    "bệnh nhân",
+    "bệnh hoạn",
+    "bệnh tật",
+    "bệnh viện",
+    "bệnh lý"
+  ]
+}
+```
