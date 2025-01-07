@@ -4,7 +4,7 @@
 > **This repository was created for the purpose of testing APIs. It serves no other purpose**
 ## Base Url
 ```url
-vietnamese-dictionary-api.vercel.app/
+https://vietnamese-dictionary-api.vercel.app/api/
 ```
 ## 📌 Route API
 ### 🔍 Search word 
