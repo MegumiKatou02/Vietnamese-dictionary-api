@@ -5,6 +5,7 @@
   "scripts": {
     "start": "vercel dev",
     "deploy": "vercel",
+    "up": "vercel --prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
