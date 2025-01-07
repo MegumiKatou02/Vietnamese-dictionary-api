@@ -19,7 +19,7 @@
   "valid": true,
 }
 ```
-### 🔗 Related words (Gợi ý từ liên quan)
+### 🔗 Related words
 - **Method:** `GET`
 - **Endpoint:** <br>
 ```url
