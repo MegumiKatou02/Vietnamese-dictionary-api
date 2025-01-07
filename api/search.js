@@ -1,14 +1,12 @@
 const fs = require('fs');
 const path = require('path');
-const url = require('url');
 
 module.exports = (req, res) => {
-  const queryObject = url.parse(req.url, true).query;
-  const word = queryObject.word?.toLowerCase();
-  const suggestionEnabled = queryObject.suggestion === 'true';
+  const queryWord = req.query.word?.trim().toLowerCase();
+  const suggestionEnabled = req.query.suggestion === 'true';
 
-  if (!word) {
-    return res.status(400).json({ message: "Thiếu tham số 'word'" });
+  if (!queryWord) {
+    return res.status(400).json({ message: "Thiếu tham số" });
   }
 
   const filePath = path.join(__dirname, '../vietnamese_words.json');
@@ -18,15 +16,21 @@ module.exports = (req, res) => {
       return res.status(500).json({ message: 'Lỗi khi đọc tệp JSON' });
     }
 
-    const words = JSON.parse(data).map(item => item.text.toLowerCase());
-    const isValid = words.includes(word);
+    try {
+      const wordsData = JSON.parse(data);
+      const foundWord = wordsData.find(item => item.text.toLowerCase() === queryWord);
 
-    let response = { text: word, valid: isValid };
+      let response = { text: queryWord, valid: !!foundWord };
 
-    if (suggestionEnabled) {
-      response.suggestions = words.filter(w => w.startsWith(word) && w !== word);
+      if (suggestionEnabled) {
+        response.suggestions = wordsData
+          .filter(item => item.text.toLowerCase().startsWith(queryWord + " "))
+          .map(item => item.text);
+      }
+
+      res.json(response);
+    } catch (parseError) {
+      return res.status(500).json({ message: 'Lỗi khi xử lý dữ liệu JSON' });
     }
-
-    res.json(response);
   });
 };
