@@ -1,8 +1,9 @@
 {
-    "version": 2,
-    "routes": [
+  "version": 2,
+  "routes": [
       { "src": "/api/hello", "dest": "/api/hello.js" },
-      { "src": "/api/data", "dest": "/api/data.js" }
-    ]
-  }
+      { "src": "/api/data", "dest": "/api/data.js" },
+      { "src": "/api/search", "dest": "/api/search.js" }
+  ]
+}
   
