@@ -1,4 +1,4 @@
-# Vietnamese-dictionary-api
+# Vietnamese Dictionary API
 
 > [!IMPORTANT]
 > **This repository was created for the purpose of testing APIs. It serves no other purpose**
@@ -16,7 +16,7 @@ https://vietnamese-dictionary-api.vercel.app/api/
 
 ```
 - **Response**
-```url
+```json
 {
   "text": "bệnh",
   "valid": true,
@@ -29,7 +29,7 @@ https://vietnamese-dictionary-api.vercel.app/api/
 /api/search?word={word}&suggestion=true
 ```
 - **Response**
-```url
+```json
 {
   "text": "bệnh",
   "valid": true,
