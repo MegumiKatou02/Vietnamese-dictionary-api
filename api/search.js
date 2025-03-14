@@ -4,6 +4,7 @@ const path = require('path');
 module.exports = (req, res) => {
   const queryWord = req.query.word?.trim().toLowerCase();
   const suggestionEnabled = req.query.suggestion === 'true';
+  const nextEnabled = req.query.next === 'true';
 
   if (!queryWord) {
     return res.status(400).json({ message: "Thiếu tham số" });
@@ -25,6 +26,15 @@ module.exports = (req, res) => {
       if (suggestionEnabled) {
         response.suggestions = wordsData
           .filter(item => item.text.toLowerCase().startsWith(queryWord + " "))
+          .map(item => item.text);
+      }
+
+      if (nextEnabled) {
+        const words = queryWord.split(' ');
+        const lastWord = words[words.length - 1];
+        
+        response.next = wordsData
+          .filter(item => item.text.toLowerCase().startsWith(lastWord + " "))
           .map(item => item.text);
       }
 
