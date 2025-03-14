@@ -4,4 +4,5 @@ node_modules/
 
 test/
 
-vietnamese_words.json
+# public data
+# vietnamese_words.json

@@ -42,3 +42,57 @@ https://vietnamese-dictionary-api.vercel.app/api/
   ]
 }
 ```
+### 🔗 Related next words
+- **Method:** `GET`
+- **Endpoint:** <br>
+```url
+/api/search?word={word}&next=true
+```
+- **Response**
+```json
+{
+  "text": "nhân tố",
+  "valid": true,
+  "next": [
+    "tố cáo",
+    "tố chất",
+    "tố cộng",
+    "tố giác",
+    "tố hộ",
+    "tố khổ",
+    "tố lan",
+    "tố lốc",
+    "tố nga",
+    "tố nữ",
+    "tố tâm",
+    "tố tụng"
+  ]
+}
+```
+
+```url
+/api/search?word={word}&next=true&suggestion=true
+```
+
+- **Response**
+```json
+{
+  "text": "nhân tố",
+  "valid": true,
+  "suggestions": [],
+  "next": [
+    "tố cáo",
+    "tố chất",
+    "tố cộng",
+    "tố giác",
+    "tố hộ",
+    "tố khổ",
+    "tố lan",
+    "tố lốc",
+    "tố nga",
+    "tố nữ",
+    "tố tâm",
+    "tố tụng"
+  ]
+}
+```
