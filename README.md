@@ -71,7 +71,7 @@ https://vietnamese-dictionary-api.vercel.app/api/
 ```
 
 ```url
-/api/search?word={word}&next=true&suggestion=true
+/api/search?word={word}&next=true&suggestion=true&limit=4
 ```
 
 - **Response**
@@ -85,14 +85,6 @@ https://vietnamese-dictionary-api.vercel.app/api/
     "tố chất",
     "tố cộng",
     "tố giác",
-    "tố hộ",
-    "tố khổ",
-    "tố lan",
-    "tố lốc",
-    "tố nga",
-    "tố nữ",
-    "tố tâm",
-    "tố tụng"
   ]
 }
 ```
